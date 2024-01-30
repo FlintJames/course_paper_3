@@ -15,6 +15,11 @@ def get_only_executed(operations):
     return completed
 
 
+def sorting_operations_by_date(operations):
+    sorting_date = sorted(operations,key=lambda operation: operation['date'], reversed=True)
+    return sorting_date
+
+
 
 
         #return sorted(date, key=lambda operation: operation['date'], reversed=True)
