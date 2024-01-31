@@ -12,7 +12,7 @@ def main():
     five_operations = sorting_operations[:5]
 
     for operation in five_operations:
-        print(get_output_date(operation))
+        print(get_output_date(operation, type_in_array))
         print()
 
 
