@@ -1,22 +1,23 @@
 import json
-from datetime import datetime
+from datetime import datetime, date
 
-def get_all_operations(file_path):
-    with open(file_path) as file:
-        content = json.load(file)
-    return content
+
+def get_all_operations():
+    with open('operations.json', encoding="utf-8") as file:
+        date = json.load(file)
+    return date
 
 
 def get_only_executed(operations):
     completed = []
     for operation in operations:
-        if operation['state'] == 'EXECUTED':
+        if operation.get('state') == 'EXECUTED':
             completed.append(operation)
     return completed
 
 
 def sorting_operations_by_date(operations):
-    sorting_date = sorted(operations,key=lambda operation: operation['date'], reversed=True)
+    sorting_date = sorted(operations, key=lambda operation: operation['date'], reverse=True)
     return sorting_date
 
 
@@ -38,8 +39,10 @@ def hide_banking_details(banking_details: str):
     return result
 
 
+
+
 def get_output_date(operation):
-    date = formate_date(operation['date'])
+    date = conversion_date(operation['date'])
     if operation.get('from'):
         from_where = hide_banking_details(operation.get('from'))
     else:
