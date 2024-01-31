@@ -3,6 +3,7 @@ import pytest
 from src.utils import conversion_date, sorting_operations_by_date, get_only_executed, get_output_date
 
 
+
 def test_conversion_date():
     assert conversion_date("2018-06-30T02:08:58.425572") == "30.06.2018"
 
@@ -108,6 +109,8 @@ def test_get_only_executed():
 ])
 def test_get_output_date(array, type_in_array, expected):
     assert get_output_date(array, ) == expected
+
+
 
 
 
