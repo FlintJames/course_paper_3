@@ -107,7 +107,10 @@ def test_get_only_executed():
      }, dict, f'28.12.2018 Открытие вклада\n' f' -> Счет **2391\n' f'49192.52 USD')
 ])
 def test_get_output_date(array, type_in_array, expected):
-    assert get_output_date(array, type_in_array) == expected
+    assert get_output_date(array, ) == expected
+
+
+
 
 
 

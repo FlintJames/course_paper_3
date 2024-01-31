@@ -41,7 +41,7 @@ def hide_banking_details(banking_details: str):
 
 
 
-def get_output_date(operation, array):
+def get_output_date(operation):
     date = conversion_date(operation['date'])
     if operation.get('from'):
         from_where = hide_banking_details(operation.get('from'))
