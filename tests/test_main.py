@@ -2,9 +2,15 @@ import pytest
 
 from src.main import main
 
+from src.utils import get_all_operations, sorting_operations_by_date, get_only_executed, get_output_date
+import os
+from configurations import ROOT_DIR
+
+OPERATIONS_PATH = os.path.join(ROOT_DIR, 'src', 'operations.json')
 
 
-@pytest.mark.parametrize('array, type_in_array, expected', [
+
+@pytest.mark.parametrize('array,type_in_array, expected', [
     {
         "id": 441945886,
         "state": "EXECUTED",
